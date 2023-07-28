@@ -1,12 +1,12 @@
 {
-  "name": "tree-path",
+  "name": "to-path-tree",
   "version": "0.1.0",
   "description": "Convert a file path array to a tree.",
   "author": "alexzhang1030",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alexzhang1030/tree-path.git"
+    "url": "git+https://github.com/alexzhang1030/to-path-tree.git"
   },
   "keywords": [
     "file path",
