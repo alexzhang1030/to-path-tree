@@ -33,10 +33,16 @@ export function pathToTree<Data>(paths: string[], {
     items: [],
     subDirectory: null,
   }
-  for (const path of paths) {
+  let pathIndex = 0
+  const pathLen = paths.length
+  while (pathIndex < pathLen) {
+    const path = paths[pathIndex]
     const parts = path.split(sep)
     let node = grouped
-    for (const part of parts) {
+    let partIndex = 0
+    const partLen = parts.length
+    while (partIndex < partLen) {
+      const part = parts[partIndex]
       if (part === parts.at(-1)) {
         // add to root
         node.items = node.items ?? []
@@ -58,7 +64,9 @@ export function pathToTree<Data>(paths: string[], {
         }
         node = node.subDirectory[part]
       }
+      partIndex += 1
     }
+    pathIndex += 1
   }
   return grouped
 }
