@@ -1,12 +1,12 @@
-import { getFileNameAndExt, pathsToTree, walkPathTree } from '..'
+import { getFileNameAndExt, pathToTree, walkPathTree } from '..'
 import input from './fixtures/input.json'
 
 describe('test', () => {
   test('paths to tree', () => {
-    expect(pathsToTree(input)).toMatchSnapshot()
+    expect(pathToTree(input)).toMatchSnapshot()
   })
   test('walker', () => {
-    const tree = pathsToTree(input)
+    const tree = pathToTree(input)
     walkPathTree(tree, (node) => {
       for (const item of node.items) {
         if (item.path === 'src/a/b/d/index.ts')

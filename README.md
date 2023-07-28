@@ -12,6 +12,62 @@ Convert a file path array to a tree.
 pnpm i tree-path
 ```
 
+## Usage
+
+```ts
+import { pathToTree } from 'tree-path'
+
+const paths = [
+  'src',
+  'src/index.ts',
+  'src/index.test.ts',
+  'src/utils',
+  'src/utils/index.ts',
+  'src/utils/index.test.ts',
+  'src/utils/other.ts',
+  'src/utils/other.test.ts',
+]
+
+const tree = pathToTree(paths)
+```
+
+The data structure of the tree is as follows:
+
+```ts
+export interface NodeItem<T> {
+  path: string
+  filename: string
+  ext: string
+  data?: T
+  isEntry: boolean // the entry is index
+}
+
+export interface TreeNode<T> {
+  items: NodeItem<T>[]
+  subDirectory: {
+    [key: string]: TreeNode<T>
+  } | null
+  parent?: TreeNode<T>
+}
+```
+
+You can use `walkPathTree` to traverse the tree.
+
+For example:
+
+```ts
+import { pathToTree, walkPathTree } from 'tree-path'
+
+const tree = pathToTree(input)
+walkPathTree(tree, (node) => {
+  for (const item of node.items) {
+    if (item.path === 'src/a/b/d/index.ts') {
+      // do something...
+    }
+  }
+})
+```
+
 ## License
 
 MIT

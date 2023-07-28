@@ -4,7 +4,7 @@ export function getFileNameAndExt(path: string) {
     : /(.+)\.(.+)$/.exec(path)?.slice(1)
 }
 
-interface NodeItem<T> {
+export interface NodeItem<T> {
   path: string
   filename: string
   ext: string
@@ -12,7 +12,7 @@ interface NodeItem<T> {
   isEntry: boolean // the entry is index
 }
 
-interface TreeNode<T> {
+export interface TreeNode<T> {
   items: NodeItem<T>[]
   subDirectory: {
     [key: string]: TreeNode<T>
@@ -22,7 +22,7 @@ interface TreeNode<T> {
 
 const ENTRY_NAME = 'index'
 
-export function pathsToTree<Data>(paths: string[], {
+export function pathToTree<Data>(paths: string[], {
   sep = '/',
   getData,
 }: {
