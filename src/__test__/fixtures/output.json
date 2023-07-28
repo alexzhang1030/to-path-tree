@@ -1,0 +1,66 @@
+[
+  {
+    "path": "src/index.ts",
+    "filename": "index.ts",
+    "ext": "ts",
+    "siblings": [
+      {
+        "path": "src/foo.ts",
+        "filename": "foo",
+        "ext": "ts"
+      }
+    ],
+    "children": [
+      {
+        "path": "src/a/index.ts",
+        "filename": "index",
+        "ext": "ts",
+        "children": [
+          {
+            "path": "src/a/b/index.ts",
+            "filename": "index",
+            "ext": "ts",
+            "children": [
+              {
+                "path": "src/a/b/d/index.ts",
+                "filename": "index",
+                "ext": "ts"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "path": "src/b/index.js",
+        "filename": "index",
+        "ext": "js",
+        "children": [
+          {
+            "path": "src/b/c/index.ts",
+            "filename": "index",
+            "ext": "ts"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "path": "a/index.ts",
+    "filename": "index",
+    "ext": "ts",
+    "siblings": [
+      {
+        "path": "a/b.ts",
+        "filename": "b",
+        "ext": "ts"
+      }
+    ],
+    "children": [
+      {
+        "path": "a/b/index.js",
+        "filename": "index",
+        "ext": "js"
+      }
+    ]
+  }
+]

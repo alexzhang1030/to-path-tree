@@ -1,0 +1,144 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`test > paths to tree 1`] = `
+{
+  "items": [],
+  "subDirectory": {
+    "a": {
+      "items": [
+        {
+          "data": undefined,
+          "ext": "ts",
+          "filename": "index",
+          "isEntry": true,
+          "path": "a/index.ts",
+        },
+        {
+          "data": undefined,
+          "ext": "ts",
+          "filename": "b",
+          "isEntry": false,
+          "path": "a/b.ts",
+        },
+      ],
+      "parent": [Circular],
+      "subDirectory": {
+        "b": {
+          "items": [
+            {
+              "data": undefined,
+              "ext": "js",
+              "filename": "index",
+              "isEntry": true,
+              "path": "a/b/index.js",
+            },
+          ],
+          "parent": [Circular],
+          "subDirectory": null,
+        },
+      },
+    },
+    "src": {
+      "items": [
+        {
+          "data": undefined,
+          "ext": "ts",
+          "filename": "index",
+          "isEntry": true,
+          "path": "src/index.ts",
+        },
+        {
+          "data": undefined,
+          "ext": "ts",
+          "filename": "foo",
+          "isEntry": false,
+          "path": "src/foo.ts",
+        },
+      ],
+      "parent": [Circular],
+      "subDirectory": {
+        "a": {
+          "items": [
+            {
+              "data": undefined,
+              "ext": "ts",
+              "filename": "index",
+              "isEntry": true,
+              "path": "src/a/index.ts",
+            },
+          ],
+          "parent": [Circular],
+          "subDirectory": {
+            "b": {
+              "items": [
+                {
+                  "data": undefined,
+                  "ext": "ts",
+                  "filename": "index",
+                  "isEntry": true,
+                  "path": "src/a/b/index.ts",
+                },
+              ],
+              "parent": [Circular],
+              "subDirectory": {
+                "d": {
+                  "items": [
+                    {
+                      "data": undefined,
+                      "ext": "ts",
+                      "filename": "index",
+                      "isEntry": true,
+                      "path": "src/a/b/d/index.ts",
+                    },
+                  ],
+                  "parent": [Circular],
+                  "subDirectory": null,
+                },
+              },
+            },
+          },
+        },
+        "b": {
+          "items": [
+            {
+              "data": undefined,
+              "ext": "js",
+              "filename": "index",
+              "isEntry": true,
+              "path": "src/b/index.js",
+            },
+          ],
+          "parent": [Circular],
+          "subDirectory": {
+            "c": {
+              "items": [
+                {
+                  "data": undefined,
+                  "ext": "ts",
+                  "filename": "index",
+                  "isEntry": true,
+                  "path": "src/b/c/index.ts",
+                },
+              ],
+              "parent": [Circular],
+              "subDirectory": null,
+            },
+          },
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`test > walker 1`] = `
+[
+  {
+    "data": undefined,
+    "ext": "ts",
+    "filename": "index",
+    "isEntry": true,
+    "path": "src/a/b/index.ts",
+  },
+]
+`;

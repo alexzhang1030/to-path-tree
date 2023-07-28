@@ -4,5 +4,8 @@ export default defineConfig({
   test: {
     includeSource: ['src/*'],
     globals: true,
+    alias: {
+      '@': 'src',
+    },
   },
 })

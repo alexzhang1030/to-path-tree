@@ -1,14 +1,19 @@
 {
-  "name": "lib-name",
+  "name": "tree-path",
   "version": "0.0.0",
-  "description": "lib-description",
+  "description": "Convert a file path array to a tree.",
   "author": "alexzhang1030",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alexzhang1030/lib-name.git"
+    "url": "git+https://github.com/alexzhang1030/tree-path.git"
   },
-  "keywords": [],
+  "keywords": [
+    "file path",
+    "path",
+    "tree",
+    "file paths to tree"
+  ],
   "exports": {
     ".": {
       "require": "./dist/index.js",
@@ -34,6 +39,7 @@
     "bumpp": "^9.1.1",
     "eslint": "^8.45.0",
     "lint-staged": "^13.2.3",
+    "pathe": "^1.1.1",
     "simple-git-hooks": "^2.9.0",
     "tsup": "^7.1.0",
     "typescript": "^5.1.6",
