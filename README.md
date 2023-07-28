@@ -18,14 +18,16 @@ pnpm i to-path-tree
 import { pathToTree } from 'to-path-tree'
 
 const paths = [
-  'src',
   'src/index.ts',
-  'src/index.test.ts',
-  'src/utils',
-  'src/utils/index.ts',
-  'src/utils/index.test.ts',
-  'src/utils/other.ts',
-  'src/utils/other.test.ts',
+  'src/a/index.ts',
+  'src/a/b/index.ts',
+  'src/a/b/d/index.ts',
+  'src/foo.ts',
+  'src/b/index.js',
+  'src/b/c/index.ts',
+  'a/index.ts',
+  'a/b.ts',
+  'a/b/index.js'
 ]
 
 const tree = pathToTree(paths)
