@@ -1,6 +1,6 @@
 {
   "name": "tree-path",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Convert a file path array to a tree.",
   "author": "alexzhang1030",
   "license": "MIT",
