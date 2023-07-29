@@ -42,6 +42,7 @@ export interface NodeItem<T> {
   ext: string
   data?: T
   isEntry: boolean // the entry is index
+  parent: TreeNode<T>
 }
 
 export interface TreeNode<T> {
