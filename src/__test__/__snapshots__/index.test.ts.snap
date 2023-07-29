@@ -11,6 +11,7 @@ exports[`test > paths to tree 1`] = `
           "ext": "ts",
           "filename": "index",
           "isEntry": true,
+          "parent": [Circular],
           "path": "a/index.ts",
         },
         {
@@ -18,6 +19,7 @@ exports[`test > paths to tree 1`] = `
           "ext": "ts",
           "filename": "b",
           "isEntry": false,
+          "parent": [Circular],
           "path": "a/b.ts",
         },
       ],
@@ -30,6 +32,7 @@ exports[`test > paths to tree 1`] = `
               "ext": "js",
               "filename": "index",
               "isEntry": true,
+              "parent": [Circular],
               "path": "a/b/index.js",
             },
           ],
@@ -45,6 +48,7 @@ exports[`test > paths to tree 1`] = `
           "ext": "ts",
           "filename": "index",
           "isEntry": true,
+          "parent": [Circular],
           "path": "src/index.ts",
         },
         {
@@ -52,6 +56,7 @@ exports[`test > paths to tree 1`] = `
           "ext": "ts",
           "filename": "foo",
           "isEntry": false,
+          "parent": [Circular],
           "path": "src/foo.ts",
         },
       ],
@@ -64,6 +69,7 @@ exports[`test > paths to tree 1`] = `
               "ext": "ts",
               "filename": "index",
               "isEntry": true,
+              "parent": [Circular],
               "path": "src/a/index.ts",
             },
           ],
@@ -76,6 +82,7 @@ exports[`test > paths to tree 1`] = `
                   "ext": "ts",
                   "filename": "index",
                   "isEntry": true,
+                  "parent": [Circular],
                   "path": "src/a/b/index.ts",
                 },
               ],
@@ -88,6 +95,7 @@ exports[`test > paths to tree 1`] = `
                       "ext": "ts",
                       "filename": "index",
                       "isEntry": true,
+                      "parent": [Circular],
                       "path": "src/a/b/d/index.ts",
                     },
                   ],
@@ -105,6 +113,7 @@ exports[`test > paths to tree 1`] = `
               "ext": "js",
               "filename": "index",
               "isEntry": true,
+              "parent": [Circular],
               "path": "src/b/index.js",
             },
           ],
@@ -117,6 +126,7 @@ exports[`test > paths to tree 1`] = `
                   "ext": "ts",
                   "filename": "index",
                   "isEntry": true,
+                  "parent": [Circular],
                   "path": "src/b/c/index.ts",
                 },
               ],
@@ -138,6 +148,135 @@ exports[`test > walker 1`] = `
     "ext": "ts",
     "filename": "index",
     "isEntry": true,
+    "parent": {
+      "items": [Circular],
+      "parent": {
+        "items": [
+          {
+            "data": undefined,
+            "ext": "ts",
+            "filename": "index",
+            "isEntry": true,
+            "parent": [Circular],
+            "path": "src/a/index.ts",
+          },
+        ],
+        "parent": {
+          "items": [
+            {
+              "data": undefined,
+              "ext": "ts",
+              "filename": "index",
+              "isEntry": true,
+              "parent": [Circular],
+              "path": "src/index.ts",
+            },
+            {
+              "data": undefined,
+              "ext": "ts",
+              "filename": "foo",
+              "isEntry": false,
+              "parent": [Circular],
+              "path": "src/foo.ts",
+            },
+          ],
+          "parent": {
+            "items": [],
+            "subDirectory": {
+              "a": {
+                "items": [
+                  {
+                    "data": undefined,
+                    "ext": "ts",
+                    "filename": "index",
+                    "isEntry": true,
+                    "parent": [Circular],
+                    "path": "a/index.ts",
+                  },
+                  {
+                    "data": undefined,
+                    "ext": "ts",
+                    "filename": "b",
+                    "isEntry": false,
+                    "parent": [Circular],
+                    "path": "a/b.ts",
+                  },
+                ],
+                "parent": [Circular],
+                "subDirectory": {
+                  "b": {
+                    "items": [
+                      {
+                        "data": undefined,
+                        "ext": "js",
+                        "filename": "index",
+                        "isEntry": true,
+                        "parent": [Circular],
+                        "path": "a/b/index.js",
+                      },
+                    ],
+                    "parent": [Circular],
+                    "subDirectory": null,
+                  },
+                },
+              },
+              "src": [Circular],
+            },
+          },
+          "subDirectory": {
+            "a": [Circular],
+            "b": {
+              "items": [
+                {
+                  "data": undefined,
+                  "ext": "js",
+                  "filename": "index",
+                  "isEntry": true,
+                  "parent": [Circular],
+                  "path": "src/b/index.js",
+                },
+              ],
+              "parent": [Circular],
+              "subDirectory": {
+                "c": {
+                  "items": [
+                    {
+                      "data": undefined,
+                      "ext": "ts",
+                      "filename": "index",
+                      "isEntry": true,
+                      "parent": [Circular],
+                      "path": "src/b/c/index.ts",
+                    },
+                  ],
+                  "parent": [Circular],
+                  "subDirectory": null,
+                },
+              },
+            },
+          },
+        },
+        "subDirectory": {
+          "b": [Circular],
+        },
+      },
+      "subDirectory": {
+        "d": {
+          "items": [
+            {
+              "data": undefined,
+              "ext": "ts",
+              "filename": "index",
+              "isEntry": true,
+              "parent": [Circular],
+              "path": "src/a/b/d/index.ts",
+            },
+          ],
+          "parent": [Circular],
+          "subDirectory": null,
+        },
+      },
+    },
     "path": "src/a/b/index.ts",
   },
 ]
