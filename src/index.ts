@@ -36,7 +36,8 @@ export function pathToTree<Data>(paths: string[], {
   let pathIndex = 0
   const pathLen = paths.length
   while (pathIndex < pathLen) {
-    let path = paths[pathIndex]
+    const originalPath = paths[pathIndex]
+    let path = originalPath
     if (path.startsWith('/'))
       path = path.slice(1)
     const parts = path.split(sep)
@@ -50,7 +51,7 @@ export function pathToTree<Data>(paths: string[], {
         node.items = node.items ?? []
         const [filename, ext] = getFileNameAndExt(path) ?? []
         const nodeItem: NodeItem<Data> = {
-          path,
+          path: originalPath,
           filename,
           ext,
           isEntry: filename === ENTRY_NAME,
