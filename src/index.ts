@@ -10,6 +10,7 @@ export interface NodeItem<T> {
   ext: string
   data?: T
   isEntry: boolean // the entry is index
+  parent: TreeNode<T>
 }
 
 export interface TreeNode<T> {
@@ -55,6 +56,7 @@ export function pathToTree<Data>(paths: string[], {
           filename,
           ext,
           isEntry: filename === ENTRY_NAME,
+          parent: node,
         }
         nodeItem.data = getData?.(nodeItem)
         node.items.push(nodeItem)
