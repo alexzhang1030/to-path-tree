@@ -36,7 +36,9 @@ export function pathToTree<Data>(paths: string[], {
   let pathIndex = 0
   const pathLen = paths.length
   while (pathIndex < pathLen) {
-    const path = paths[pathIndex]
+    let path = paths[pathIndex]
+    if (path.startsWith('/'))
+      path = path.slice(1)
     const parts = path.split(sep)
     let node = grouped
     let partIndex = 0
