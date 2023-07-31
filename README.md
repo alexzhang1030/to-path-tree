@@ -71,13 +71,6 @@ walkPathTree(tree, (node) => {
 })
 ```
 
-## Benchmark
-
-```md
-  pathToTree:
-    317 225 ops/s, ±0.42%   | fastest
-```
-
 ## License
 
 MIT

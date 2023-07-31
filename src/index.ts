@@ -1,7 +1,10 @@
+const REGEX_HAVE_PATHS = /.+\/(.+)\.(.+)$/
+const REGEX_NO_PATHS = /(.+)\.(.+)$/
+
 export function getFileNameAndExt(path: string) {
   return path.includes('/')
-    ? /.+\/(.+)\.(.+)$/.exec(path)?.slice(1)
-    : /(.+)\.(.+)$/.exec(path)?.slice(1)
+    ? REGEX_HAVE_PATHS.exec(path)?.slice(1)
+    : REGEX_NO_PATHS.exec(path)?.slice(1)
 }
 
 export interface NodeItem<T> {
@@ -30,50 +33,49 @@ export function pathToTree<Data>(paths: string[], {
   sep?: string
   getData?: (node: NodeItem<Data>) => Data
 } = {}): TreeNode<Data> {
-  const grouped: TreeNode<Data> = {
-    items: [],
-    subDirectory: null,
-  }
+  const root: TreeNode<Data> = { items: [], subDirectory: {} }
+
   let pathIndex = 0
   const pathLen = paths.length
   while (pathIndex < pathLen) {
     const originalPath = paths[pathIndex]
-    let path = originalPath
-    if (path.startsWith('/'))
-      path = path.slice(1)
+    pathIndex += 1
+    const path = originalPath.startsWith('/') ? originalPath.slice(1) : originalPath
     const parts = path.split(sep)
-    let node = grouped
-    let partIndex = 0
-    const partLen = parts.length
-    while (partIndex < partLen) {
-      const part = parts[partIndex]
-      if (part === parts.at(-1)) {
-        // add to root
-        node.items = node.items ?? []
-        const [filename, ext] = getFileNameAndExt(path) ?? []
+
+    let currentNode = root
+    const partsLen = parts.length
+    for (let i = 0; i < partsLen; i++) {
+      const part = parts[i]
+      if (i === partsLen - 1) { // this is the last part of the path, so it's a file
+        const [filename, ext] = getFileNameAndExt(part) ?? []
         const nodeItem: NodeItem<Data> = {
           path: originalPath,
           filename,
           ext,
           isEntry: filename === ENTRY_NAME,
-          parent: node,
+          parent: currentNode,
         }
         nodeItem.data = getData?.(nodeItem)
-        node.items.push(nodeItem)
+        currentNode.items.push(nodeItem)
       }
-      else {
-        node.subDirectory = node.subDirectory ?? {}
-        node.subDirectory[part] = node.subDirectory[part] ?? {
-          subDirectory: null,
-          parent: node,
+      else { // this part is a directory
+        if (!currentNode.subDirectory)
+          currentNode.subDirectory = {}
+
+        if (!currentNode.subDirectory[part]) {
+          currentNode.subDirectory[part] = {
+            items: [],
+            subDirectory: null,
+            parent: currentNode,
+          }
         }
-        node = node.subDirectory[part]
+        currentNode = currentNode?.subDirectory[part]
       }
-      partIndex += 1
     }
-    pathIndex += 1
   }
-  return grouped
+
+  return root
 }
 
 export function walkPathTree<Data>(node: TreeNode<Data>, callback: (node: TreeNode<Data>) => void) {
