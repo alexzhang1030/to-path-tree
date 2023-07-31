@@ -66,11 +66,11 @@ export function pathToTree<Data>(paths: string[], {
         if (!currentNode.subDirectory[part]) {
           currentNode.subDirectory[part] = {
             items: [],
-            subDirectory: null,
+            subDirectory: {},
             parent: currentNode,
           }
         }
-        currentNode = currentNode?.subDirectory[part]
+        currentNode = currentNode.subDirectory[part]
       }
     }
   }
