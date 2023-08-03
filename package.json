@@ -35,15 +35,15 @@
     "release": "vitest run && bumpp --commit \"chore: release v%s\" --push --tag && pnpm publish"
   },
   "devDependencies": {
-    "@antfu/eslint-config-ts": "^0.39.8",
+    "@antfu/eslint-config-ts": "^0.40.0",
     "bumpp": "^9.1.1",
-    "eslint": "^8.45.0",
+    "eslint": "^8.46.0",
     "lint-staged": "^13.2.3",
     "pathe": "^1.1.1",
     "simple-git-hooks": "^2.9.0",
-    "tsup": "^7.1.0",
+    "tsup": "^7.2.0",
     "typescript": "^5.1.6",
-    "vitest": "^0.33.0"
+    "vitest": "^0.34.1"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm exec lint-staged"
