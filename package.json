@@ -36,14 +36,14 @@
   },
   "devDependencies": {
     "@antfu/eslint-config-ts": "^0.40.2",
-    "bumpp": "^9.1.1",
+    "bumpp": "^9.2.0",
     "eslint": "^8.47.0",
     "lint-staged": "^14.0.0",
     "pathe": "^1.1.1",
     "simple-git-hooks": "^2.9.0",
     "tsup": "^7.2.0",
     "typescript": "^5.1.6",
-    "vitest": "^0.34.1"
+    "vitest": "^0.34.2"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm exec lint-staged"
