@@ -2,10 +2,10 @@ import { getFileNameAndExt, pathToTree, walkPathTree } from '..'
 import input from './fixtures/input.json'
 
 describe('test', () => {
-  test('paths to tree', () => {
+  it('paths to tree', () => {
     expect(pathToTree(input)).toMatchSnapshot()
   })
-  test('walker', () => {
+  it('walker', () => {
     const tree = pathToTree(input)
     walkPathTree(tree, (node) => {
       for (const item of node.items) {
@@ -16,7 +16,7 @@ describe('test', () => {
   })
 })
 
-test.each([
+it.each([
   ['foo/bar.ts', ['bar', 'ts']],
   ['foo/bar/baz.ts', ['baz', 'ts']],
   ['index.ts', ['index', 'ts']],
