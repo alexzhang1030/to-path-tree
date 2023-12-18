@@ -36,9 +36,9 @@
     "release": "vitest run && bumpp --commit \"chore: release v%s\" --push --tag && pnpm publish"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.4.4",
+    "@antfu/eslint-config": "^2.4.6",
     "bumpp": "^9.2.1",
-    "eslint": "^8.55.0",
+    "eslint": "^8.56.0",
     "lint-staged": "^15.2.0",
     "pathe": "^1.1.1",
     "simple-git-hooks": "^2.9.0",
