@@ -1,4 +1,4 @@
-import { ENTRY_NAME } from './constants'
+import { ENTRY_NAME, ROOT_NAME } from './constants'
 import type { NodeItem, ParseResults, TreeNode } from './types'
 
 const REGEX_HAVE_PATHS = /.+\/(.+)\.(.+)$/
@@ -75,7 +75,7 @@ export function parsePath<Data>(
 }
 
 export function genRoot<T = unknown>(): TreeNode<T> {
-  return { items: [], subDirectory: {}, name: 'root' }
+  return { items: [], subDirectory: {}, name: ROOT_NAME }
 }
 
 export function walkPathTree<Data>(node: TreeNode<Data>, callback: (node: TreeNode<Data>) => void) {
