@@ -5,12 +5,16 @@ exports[`custom separator > custom-separator add path 1`] = `
   "items": [],
   "name": "root",
   "path": "/",
+  "relativePath": "/",
+  "relativePathName": "",
   "subDirectory": {
     "a": {
       "items": [],
       "name": "a",
       "parent": [Circular],
       "path": "/a$",
+      "relativePath": "a$",
+      "relativePathName": "a",
       "subDirectory": {
         "b": {
           "items": [
@@ -34,6 +38,8 @@ exports[`custom separator > custom-separator add path 1`] = `
           "name": "b",
           "parent": [Circular],
           "path": "/a$b$",
+          "relativePath": "b$",
+          "relativePathName": "b",
           "subDirectory": {},
         },
       },
@@ -47,12 +53,16 @@ exports[`custom separator > custom-separator remove path 1`] = `
   "items": [],
   "name": "root",
   "path": "/",
+  "relativePath": "/",
+  "relativePathName": "",
   "subDirectory": {
     "a": {
       "items": [],
       "name": "a",
       "parent": [Circular],
       "path": "/a$",
+      "relativePath": "a$",
+      "relativePathName": "a",
       "subDirectory": {},
     },
   },
@@ -64,12 +74,16 @@ exports[`simple builder > simple-builder add path 1`] = `
   "items": [],
   "name": "root",
   "path": "/",
+  "relativePath": "/",
+  "relativePathName": "",
   "subDirectory": {
     "a": {
       "items": [],
       "name": "a",
       "parent": [Circular],
       "path": "/a/",
+      "relativePath": "a/",
+      "relativePathName": "a",
       "subDirectory": {
         "b": {
           "items": [
@@ -93,6 +107,8 @@ exports[`simple builder > simple-builder add path 1`] = `
           "name": "b",
           "parent": [Circular],
           "path": "/a/b/",
+          "relativePath": "b/",
+          "relativePathName": "b",
           "subDirectory": {},
         },
       },
@@ -106,12 +122,16 @@ exports[`simple builder > simple-builder remove path 1`] = `
   "items": [],
   "name": "root",
   "path": "/",
+  "relativePath": "/",
+  "relativePathName": "",
   "subDirectory": {
     "a": {
       "items": [],
       "name": "a",
       "parent": [Circular],
       "path": "/a/",
+      "relativePath": "a/",
+      "relativePathName": "a",
       "subDirectory": {},
     },
   },

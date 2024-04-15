@@ -66,6 +66,14 @@ export interface TreeNode<T> {
   items: NodeItem<T>[]
   name: string
   path: string
+  /**
+   * Relative to parent path
+   */
+  relativePath: string
+  /**
+   * Relative to root path, exclude sep
+   */
+  relativePathName: string
   subDirectory: {
     [key: string]: TreeNode<T>
   } | null

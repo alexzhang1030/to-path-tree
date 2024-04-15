@@ -14,6 +14,14 @@ export interface TreeNode<T> {
   } | null
   parent?: TreeNode<T>
   path: string
+  /**
+   * Relative to parent path
+   */
+  relativePath: string
+  /**
+   * Relative to root path, exclude sep
+   */
+  relativePathName: string
   name: string
 }
 
