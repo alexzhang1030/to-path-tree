@@ -87,9 +87,14 @@ it('get data', () => {
     getData: node => ({ data: node.ext }),
   })
   builder.addPath('/a/index.ts')
+  // override default
+  builder.addPath('/a/foo.ts', { data: 'hello world' })
   const node = builder.getNode('/a/index.ts', true)
   expect(node?.data).toStrictEqual({
     data: 'ts',
+  })
+  expect(builder.getNode('/a/foo.ts', true)?.data).toStrictEqual({
+    data: 'hello world',
   })
   // get non-exist path, should return null
   expect(builder.getNode('/a/b/index.ts')).toBeNull()

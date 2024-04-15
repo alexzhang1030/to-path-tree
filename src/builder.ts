@@ -24,8 +24,20 @@ export class PathTreeBuilder<T extends Record<string, unknown>> {
     this.#getData = getData
   }
 
-  addPath(path: string) {
-    const nodeItem = parsePath(path, this.#sep, this.#root, this.#getData)
+  /**
+   *
+   * @param path
+   * @param userData pass this will override default getData passed in constructor
+   */
+  addPath(path: string, userData?: T) {
+    const nodeItem = parsePath(
+      path,
+      this.#sep,
+      this.#root,
+      userData
+        ? () => userData
+        : this.#getData,
+    )
     this.#mapping.set(path, nodeItem)
   }
 
