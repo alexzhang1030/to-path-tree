@@ -1,3 +1,4 @@
+import { ROOT_NAME } from '..'
 import { PathTreeBuilder } from '@/builder'
 
 it('simple builder', () => {
@@ -81,6 +82,8 @@ it('get items', () => {
   expect(builder.getItems('/a/index.ts')).toEqual([])
   // get non-exist path, should return []
   expect(builder.getItems('/a/b/')).toEqual([])
+  // get root
+  expect(builder.getItems(ROOT_NAME)).toMatchInlineSnapshot(`[]`)
 })
 
 it('custom separator', () => {

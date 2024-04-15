@@ -1,4 +1,4 @@
-import { DEFAULT_SEP } from './constants'
+import { DEFAULT_SEP, ROOT_NAME } from './constants'
 import type { NodeItem, ParseResults, TreeNode } from './types'
 import { genRoot, parsePath } from './utils'
 
@@ -65,6 +65,8 @@ export class PathTreeBuilder<T extends Record<string, unknown>> {
   }
 
   getItems(path: string) {
+    if (path === ROOT_NAME)
+      return this.#root.items
     const node = this.#mapping.get(path)
     if (!node)
       return []
