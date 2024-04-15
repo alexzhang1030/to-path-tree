@@ -28,7 +28,7 @@
     "dist"
   ],
   "scripts": {
-    "test": "vitest",
+    "test": "vitest --coverage",
     "lint": "eslint .",
     "prepare": "simple-git-hooks",
     "build": "tsup",
