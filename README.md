@@ -3,6 +3,7 @@
 <a href="https://www.npmjs.com/package/to-path-tree" target="_blank" rel="noopener noreferrer"><img src="https://badgen.net/npm/v/to-path-tree" alt="NPM Version" /></a>
 <a href="https://www.npmjs.com/package/to-path-tree" target="_blank" rel="noopener noreferrer"><img src="https://badgen.net/npm/dt/to-path-tree" alt="NPM Downloads" /></a>
 <a href="https://github.com/alexzhang1030/to-path-tree/blob/main/LICENSE" target="_blank" rel="noopener noreferrer"><img src="https://badgen.net/github/license/alexzhang1030/to-path-tree" alt="License" /></a>
+<a href="https://codecov.io/gh/alexzhang1030/to-path-tree" ><img src="https://codecov.io/gh/alexzhang1030/to-path-tree/graph/badge.svg?token=NQ8S2Z38OB"/></a>
 
 Convert a file path array to a tree.
 
