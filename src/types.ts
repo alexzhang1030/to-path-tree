@@ -13,6 +13,7 @@ export interface TreeNode<T> {
     [key: string]: TreeNode<T>
   } | null
   parent?: TreeNode<T>
+  path: string
   name: string
 }
 

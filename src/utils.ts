@@ -57,6 +57,7 @@ export function parsePath<Data>(
           items: [],
           subDirectory: null,
           parent: currentNode,
+          path: `${currentNode.path}${fixedPart}${sep}`,
         }
       }
       currentNode = currentNode.subDirectory[fixedPart]
@@ -75,7 +76,7 @@ export function parsePath<Data>(
 }
 
 export function genRoot<T = unknown>(): TreeNode<T> {
-  return { items: [], subDirectory: {}, name: ROOT_NAME }
+  return { items: [], subDirectory: {}, name: ROOT_NAME, path: '/' }
 }
 
 export function walkPathTree<Data>(node: TreeNode<Data>, callback: (node: TreeNode<Data>) => void) {

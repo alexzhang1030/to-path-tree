@@ -4,16 +4,19 @@ exports[`should add directories 1`] = `
 {
   "items": [],
   "name": "root",
+  "path": "/",
   "subDirectory": {
     "a": {
       "items": [],
       "name": "a",
       "parent": [Circular],
+      "path": "/a/",
       "subDirectory": {
         "b": {
           "items": [],
           "name": "b",
           "parent": [Circular],
+          "path": "/a/b/",
           "subDirectory": {},
         },
       },
@@ -26,6 +29,7 @@ exports[`test > paths to tree 1`] = `
 {
   "items": [],
   "name": "root",
+  "path": "/",
   "subDirectory": {
     "a": {
       "items": [
@@ -48,6 +52,7 @@ exports[`test > paths to tree 1`] = `
       ],
       "name": "a",
       "parent": [Circular],
+      "path": "/a/",
       "subDirectory": {
         "b": {
           "items": [
@@ -62,6 +67,7 @@ exports[`test > paths to tree 1`] = `
           ],
           "name": "b",
           "parent": [Circular],
+          "path": "/a/b/",
           "subDirectory": null,
         },
       },
@@ -87,6 +93,7 @@ exports[`test > paths to tree 1`] = `
       ],
       "name": "src",
       "parent": [Circular],
+      "path": "/src/",
       "subDirectory": {
         "a": {
           "items": [
@@ -101,6 +108,7 @@ exports[`test > paths to tree 1`] = `
           ],
           "name": "a",
           "parent": [Circular],
+          "path": "/src/a/",
           "subDirectory": {
             "b": {
               "items": [
@@ -115,6 +123,7 @@ exports[`test > paths to tree 1`] = `
               ],
               "name": "b",
               "parent": [Circular],
+              "path": "/src/a/b/",
               "subDirectory": {
                 "d": {
                   "items": [
@@ -129,6 +138,7 @@ exports[`test > paths to tree 1`] = `
                   ],
                   "name": "d",
                   "parent": [Circular],
+                  "path": "/src/a/b/d/",
                   "subDirectory": null,
                 },
               },
@@ -148,6 +158,7 @@ exports[`test > paths to tree 1`] = `
           ],
           "name": "b",
           "parent": [Circular],
+          "path": "/src/b/",
           "subDirectory": {
             "c": {
               "items": [
@@ -162,6 +173,7 @@ exports[`test > paths to tree 1`] = `
               ],
               "name": "c",
               "parent": [Circular],
+              "path": "/src/b/c/",
               "subDirectory": null,
             },
           },
@@ -217,6 +229,7 @@ exports[`test > walker 1`] = `
           "parent": {
             "items": [],
             "name": "root",
+            "path": "/",
             "subDirectory": {
               "a": {
                 "items": [
@@ -239,6 +252,7 @@ exports[`test > walker 1`] = `
                 ],
                 "name": "a",
                 "parent": [Circular],
+                "path": "/a/",
                 "subDirectory": {
                   "b": {
                     "items": [
@@ -253,6 +267,7 @@ exports[`test > walker 1`] = `
                     ],
                     "name": "b",
                     "parent": [Circular],
+                    "path": "/a/b/",
                     "subDirectory": null,
                   },
                 },
@@ -260,6 +275,7 @@ exports[`test > walker 1`] = `
               "src": [Circular],
             },
           },
+          "path": "/src/",
           "subDirectory": {
             "a": [Circular],
             "b": {
@@ -275,6 +291,7 @@ exports[`test > walker 1`] = `
               ],
               "name": "b",
               "parent": [Circular],
+              "path": "/src/b/",
               "subDirectory": {
                 "c": {
                   "items": [
@@ -289,16 +306,19 @@ exports[`test > walker 1`] = `
                   ],
                   "name": "c",
                   "parent": [Circular],
+                  "path": "/src/b/c/",
                   "subDirectory": null,
                 },
               },
             },
           },
         },
+        "path": "/src/a/",
         "subDirectory": {
           "b": [Circular],
         },
       },
+      "path": "/src/a/b/",
       "subDirectory": {
         "d": {
           "items": [
@@ -313,6 +333,7 @@ exports[`test > walker 1`] = `
           ],
           "name": "d",
           "parent": [Circular],
+          "path": "/src/a/b/d/",
           "subDirectory": null,
         },
       },

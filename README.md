@@ -65,6 +65,7 @@ export interface NodeItem<T> {
 export interface TreeNode<T> {
   items: NodeItem<T>[]
   name: string
+  path: string
   subDirectory: {
     [key: string]: TreeNode<T>
   } | null

@@ -21,6 +21,7 @@ it('get items', () => {
     {
       "items": [],
       "name": "root",
+      "path": "/",
       "subDirectory": {
         "a": {
           "items": [
@@ -35,6 +36,7 @@ it('get items', () => {
           ],
           "name": "a",
           "parent": [Circular],
+          "path": "/a/",
           "subDirectory": {},
         },
       },
@@ -53,10 +55,12 @@ it('get items', () => {
           "parent": {
             "items": [],
             "name": "root",
+            "path": "/",
             "subDirectory": {
               "a": [Circular],
             },
           },
+          "path": "/a/",
           "subDirectory": {},
         },
         "path": "/a/index.ts",
