@@ -1,0 +1,109 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`custom separator > custom-separator add path 1`] = `
+{
+  "items": [],
+  "name": "root",
+  "subDirectory": {
+    "a": {
+      "items": [],
+      "name": "a",
+      "parent": [Circular],
+      "subDirectory": {
+        "b": {
+          "items": [
+            {
+              "data": undefined,
+              "ext": "ts",
+              "filename": "index",
+              "isEntry": true,
+              "parent": [Circular],
+              "path": "$a$b$index.ts",
+            },
+            {
+              "data": undefined,
+              "ext": "ts",
+              "filename": "foo",
+              "isEntry": false,
+              "parent": [Circular],
+              "path": "$a$b$foo.ts",
+            },
+          ],
+          "name": "b",
+          "parent": [Circular],
+          "subDirectory": {},
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`custom separator > custom-separator remove path 1`] = `
+{
+  "items": [],
+  "name": "root",
+  "subDirectory": {
+    "a": {
+      "items": [],
+      "name": "a",
+      "parent": [Circular],
+      "subDirectory": {},
+    },
+  },
+}
+`;
+
+exports[`simple builder > simple-builder add path 1`] = `
+{
+  "items": [],
+  "name": "root",
+  "subDirectory": {
+    "a": {
+      "items": [],
+      "name": "a",
+      "parent": [Circular],
+      "subDirectory": {
+        "b": {
+          "items": [
+            {
+              "data": undefined,
+              "ext": "ts",
+              "filename": "index",
+              "isEntry": true,
+              "parent": [Circular],
+              "path": "/a/b/index.ts",
+            },
+            {
+              "data": undefined,
+              "ext": "ts",
+              "filename": "foo",
+              "isEntry": false,
+              "parent": [Circular],
+              "path": "/a/b/foo.ts",
+            },
+          ],
+          "name": "b",
+          "parent": [Circular],
+          "subDirectory": {},
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`simple builder > simple-builder remove path 1`] = `
+{
+  "items": [],
+  "name": "root",
+  "subDirectory": {
+    "a": {
+      "items": [],
+      "name": "a",
+      "parent": [Circular],
+      "subDirectory": {},
+    },
+  },
+}
+`;

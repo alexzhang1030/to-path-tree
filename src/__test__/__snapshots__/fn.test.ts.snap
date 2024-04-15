@@ -1,8 +1,31 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`should add directories 1`] = `
+{
+  "items": [],
+  "name": "root",
+  "subDirectory": {
+    "a": {
+      "items": [],
+      "name": "a",
+      "parent": [Circular],
+      "subDirectory": {
+        "b": {
+          "items": [],
+          "name": "b",
+          "parent": [Circular],
+          "subDirectory": {},
+        },
+      },
+    },
+  },
+}
+`;
+
 exports[`test > paths to tree 1`] = `
 {
   "items": [],
+  "name": "root",
   "subDirectory": {
     "a": {
       "items": [
@@ -23,6 +46,7 @@ exports[`test > paths to tree 1`] = `
           "path": "a/b.ts",
         },
       ],
+      "name": "a",
       "parent": [Circular],
       "subDirectory": {
         "b": {
@@ -36,6 +60,7 @@ exports[`test > paths to tree 1`] = `
               "path": "a/b/index.js",
             },
           ],
+          "name": "b",
           "parent": [Circular],
           "subDirectory": null,
         },
@@ -60,6 +85,7 @@ exports[`test > paths to tree 1`] = `
           "path": "src/foo.ts",
         },
       ],
+      "name": "src",
       "parent": [Circular],
       "subDirectory": {
         "a": {
@@ -73,6 +99,7 @@ exports[`test > paths to tree 1`] = `
               "path": "src/a/index.ts",
             },
           ],
+          "name": "a",
           "parent": [Circular],
           "subDirectory": {
             "b": {
@@ -86,6 +113,7 @@ exports[`test > paths to tree 1`] = `
                   "path": "src/a/b/index.ts",
                 },
               ],
+              "name": "b",
               "parent": [Circular],
               "subDirectory": {
                 "d": {
@@ -99,6 +127,7 @@ exports[`test > paths to tree 1`] = `
                       "path": "src/a/b/d/index.ts",
                     },
                   ],
+                  "name": "d",
                   "parent": [Circular],
                   "subDirectory": null,
                 },
@@ -117,6 +146,7 @@ exports[`test > paths to tree 1`] = `
               "path": "src/b/index.js",
             },
           ],
+          "name": "b",
           "parent": [Circular],
           "subDirectory": {
             "c": {
@@ -130,6 +160,7 @@ exports[`test > paths to tree 1`] = `
                   "path": "src/b/c/index.ts",
                 },
               ],
+              "name": "c",
               "parent": [Circular],
               "subDirectory": null,
             },
@@ -150,6 +181,7 @@ exports[`test > walker 1`] = `
     "isEntry": true,
     "parent": {
       "items": [Circular],
+      "name": "b",
       "parent": {
         "items": [
           {
@@ -161,6 +193,7 @@ exports[`test > walker 1`] = `
             "path": "src/a/index.ts",
           },
         ],
+        "name": "a",
         "parent": {
           "items": [
             {
@@ -180,8 +213,10 @@ exports[`test > walker 1`] = `
               "path": "src/foo.ts",
             },
           ],
+          "name": "src",
           "parent": {
             "items": [],
+            "name": "root",
             "subDirectory": {
               "a": {
                 "items": [
@@ -202,6 +237,7 @@ exports[`test > walker 1`] = `
                     "path": "a/b.ts",
                   },
                 ],
+                "name": "a",
                 "parent": [Circular],
                 "subDirectory": {
                   "b": {
@@ -215,6 +251,7 @@ exports[`test > walker 1`] = `
                         "path": "a/b/index.js",
                       },
                     ],
+                    "name": "b",
                     "parent": [Circular],
                     "subDirectory": null,
                   },
@@ -236,6 +273,7 @@ exports[`test > walker 1`] = `
                   "path": "src/b/index.js",
                 },
               ],
+              "name": "b",
               "parent": [Circular],
               "subDirectory": {
                 "c": {
@@ -249,6 +287,7 @@ exports[`test > walker 1`] = `
                       "path": "src/b/c/index.ts",
                     },
                   ],
+                  "name": "c",
                   "parent": [Circular],
                   "subDirectory": null,
                 },
@@ -272,6 +311,7 @@ exports[`test > walker 1`] = `
               "path": "src/a/b/d/index.ts",
             },
           ],
+          "name": "d",
           "parent": [Circular],
           "subDirectory": null,
         },

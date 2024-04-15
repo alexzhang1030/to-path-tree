@@ -1,4 +1,4 @@
-import { getFileNameAndExt, pathToTree, walkPathTree } from '..'
+import { pathToTree, walkPathTree } from '..'
 import input from './fixtures/input.json'
 
 describe('test', () => {
@@ -16,10 +16,10 @@ describe('test', () => {
   })
 })
 
-it.each([
-  ['foo/bar.ts', ['bar', 'ts']],
-  ['foo/bar/baz.ts', ['baz', 'ts']],
-  ['index.ts', ['index', 'ts']],
-])('the file name and ext of %s should be %s', (path, expected) => {
-  expect(getFileNameAndExt(path)).toEqual(expected)
+it('should add directories', () => {
+  const tree = pathToTree([
+    '/a/',
+    '/a/b/',
+  ])
+  expect(tree).toMatchSnapshot()
 })

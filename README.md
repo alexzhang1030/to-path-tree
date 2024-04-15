@@ -14,6 +14,8 @@ pnpm i to-path-tree
 
 ## Usage
 
+### Function usage
+
 ```ts
 import { pathToTree } from 'to-path-tree'
 
@@ -33,6 +35,20 @@ const paths = [
 const tree = pathToTree(paths)
 ```
 
+### Builder usage
+
+```ts
+import { PathTreeBuilder } from 'to-path-tree'
+
+const builder = new PathTreeBuilder()
+builder.addPath('src/index.ts')
+builder.addPath('src/a/index.ts')
+builder.removePath('src/index.ts')
+builder.getItems('src/a/') // get all items under 'src/a/'
+```
+
+### Tree types
+
 The data structure of the tree is as follows:
 
 ```ts
@@ -47,12 +63,15 @@ export interface NodeItem<T> {
 
 export interface TreeNode<T> {
   items: NodeItem<T>[]
+  name: string
   subDirectory: {
     [key: string]: TreeNode<T>
   } | null
   parent?: TreeNode<T>
 }
 ```
+
+### Traverse the tree
 
 You can use `walkPathTree` to traverse the tree.
 
