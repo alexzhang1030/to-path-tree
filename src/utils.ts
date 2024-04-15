@@ -41,6 +41,7 @@ export function parsePath<Data>(
         ext,
         isEntry: filename === ENTRY_NAME,
         parent: currentNode,
+        file: part,
       }
       nodeItem.data = getData?.(nodeItem)
       currentNode.items.push(nodeItem)

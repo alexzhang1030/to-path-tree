@@ -21,6 +21,7 @@ exports[`custom separator > custom-separator add path 1`] = `
             {
               "data": undefined,
               "ext": "ts",
+              "file": "index.ts",
               "filename": "index",
               "isEntry": true,
               "parent": [Circular],
@@ -29,6 +30,7 @@ exports[`custom separator > custom-separator add path 1`] = `
             {
               "data": undefined,
               "ext": "ts",
+              "file": "foo.ts",
               "filename": "foo",
               "isEntry": false,
               "parent": [Circular],
@@ -90,6 +92,7 @@ exports[`simple builder > simple-builder add path 1`] = `
             {
               "data": undefined,
               "ext": "ts",
+              "file": "index.ts",
               "filename": "index",
               "isEntry": true,
               "parent": [Circular],
@@ -98,6 +101,7 @@ exports[`simple builder > simple-builder add path 1`] = `
             {
               "data": undefined,
               "ext": "ts",
+              "file": "foo.ts",
               "filename": "foo",
               "isEntry": false,
               "parent": [Circular],

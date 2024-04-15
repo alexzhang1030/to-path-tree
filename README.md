@@ -55,8 +55,18 @@ The data structure of the tree is as follows:
 ```ts
 export interface NodeItem<T> {
   path: string
+  /**
+   * e.g. index
+   */
   filename: string
+  /**
+   * e.g. ts
+   */
   ext: string
+  /**
+   * e.g. index.ts
+   */
+  file: string
   data?: T
   isEntry: boolean // the entry is index
   parent: TreeNode<T>

@@ -30,6 +30,7 @@ it('get items', () => {
             {
               "data": undefined,
               "ext": "ts",
+              "file": "index.ts",
               "filename": "index",
               "isEntry": true,
               "parent": [Circular],
@@ -51,6 +52,7 @@ it('get items', () => {
       {
         "data": undefined,
         "ext": "ts",
+        "file": "index.ts",
         "filename": "index",
         "isEntry": true,
         "parent": {
