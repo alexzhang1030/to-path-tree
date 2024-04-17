@@ -1,11 +1,11 @@
-import { ENTRY_NAME, ROOT_NAME } from './constants'
+import { DEFAULT_SEP, ENTRY_NAME, ROOT_NAME } from './constants'
 import type { NodeItem, ParseResults, TreeNode } from './types'
 
 const REGEX_HAVE_PATHS = /.+\/(.+)\.(.+)$/
 const REGEX_NO_PATHS = /(.+)\.(.+)$/
 
-export function getFileNameAndExt(path: string) {
-  return path.includes('/')
+export function getFileNameAndExt(path: string, sep = DEFAULT_SEP) {
+  return path.includes(sep)
     ? REGEX_HAVE_PATHS.exec(path)?.slice(1)
     : REGEX_NO_PATHS.exec(path)?.slice(1)
 }
@@ -34,7 +34,7 @@ export function parsePath<Data>(
   for (let i = 0; i < partsLen; i++) {
     const part = parts[i]
     if (i === partsLen - 1 && !isDirectory) { // this is the last part of the path, so it's a file
-      const [filename, ext] = getFileNameAndExt(part)!
+      const [filename, ext] = getFileNameAndExt(part, sep)!
       nodeItem = {
         path: originalPath,
         filename,

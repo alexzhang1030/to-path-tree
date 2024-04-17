@@ -92,6 +92,7 @@ it('custom separator', () => {
   builder.addPath('$a$b$')
   builder.addPath('$a$b$index.ts')
   builder.addPath('$a$b$foo.ts')
+  builder.addPath('$a$z$index.ts')
   expect(builder.tree).toMatchSnapshot('custom-separator add path')
   builder.removePath('$a$b$')
   builder.removePath('$a$b$foo.ts')
