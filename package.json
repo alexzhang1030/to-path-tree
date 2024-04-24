@@ -1,7 +1,7 @@
 {
   "name": "to-path-tree",
   "type": "module",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "Convert a file path array to a tree.",
   "author": "alexzhang1030",
   "license": "MIT",
