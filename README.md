@@ -46,7 +46,7 @@ builder.addPath('src/index.ts')
 builder.addPath('src/a/index.ts')
 builder.removePath('src/index.ts')
 builder.getItems('src/a/') // get all file items under 'src/a/'
-builder.getSubdirectories('src/') // get all subdirectories under 'src/'
+builder.getSubDirectories('src/') // get all subdirectories under 'src/'
 ```
 
 ### Tree types
