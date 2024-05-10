@@ -8,20 +8,24 @@ export class PathTreeBuilder<T extends Record<string, unknown>> {
 
   #sep
   #getData
+  #autoResolveDir
 
   /**
    * @param options
    * @param options.sep - default `/`
    * @param options.getData - function to get data from node
+   * @param options.autoResolveDir - will auto resolve directory when adding file path, but not added dir path, default `true`
    */
   constructor(options?: {
     sep?: string
     getData?: (node: NodeItem<T>) => T
+    autoResolveDir?: boolean
   }) {
-    const { sep = DEFAULT_SEP, getData } = options ?? {}
+    const { sep = DEFAULT_SEP, getData, autoResolveDir = true } = options ?? {}
 
     this.#sep = sep
     this.#getData = getData
+    this.#autoResolveDir = autoResolveDir
   }
 
   /**
@@ -38,7 +42,22 @@ export class PathTreeBuilder<T extends Record<string, unknown>> {
         ? () => userData
         : this.#getData,
     )
-    this.#mapping.set(path, nodeItem)
+    this.#mapping.set(nodeItem.node.path, nodeItem)
+    if (this.#autoResolveDir)
+      this.#resolveDir(nodeItem)
+  }
+
+  #resolveDir(node: ParseResults<T>) {
+    let dirNode: ParseResults<T>['node'] | undefined = node.node
+    while (dirNode.parent) {
+      dirNode = dirNode?.parent
+      if (!this.#mapping.has(dirNode.path)) {
+        this.#mapping.set(dirNode.path, {
+          node: dirNode,
+          type: 'directory',
+        })
+      }
+    }
   }
 
   removePath(path: string) {
@@ -67,7 +86,7 @@ export class PathTreeBuilder<T extends Record<string, unknown>> {
   getItems(path: string) {
     if (path === ROOT_NAME)
       return this.#root.items
-    const node = this.#mapping.get(path)
+    const node = this.#mapping.get(getStrictPath(path))
     if (!node)
       return []
     return node.type === 'file'
@@ -75,7 +94,20 @@ export class PathTreeBuilder<T extends Record<string, unknown>> {
       : node.node.items
   }
 
+  getSubDirectories(path: string) {
+    if (path === ROOT_NAME)
+      return this.#root.subDirectory
+    const node = this.getNode(getStrictPath(path), false)
+    if (!node)
+      return null
+    return node.subDirectory
+  }
+
   get tree() {
     return this.#root
   }
+}
+
+function getStrictPath(path: string) {
+  return path.startsWith('/') ? path : `/${path}`
 }

@@ -14,76 +14,32 @@ it('simple builder', () => {
   expect(builder.tree).toMatchSnapshot('simple-builder remove path')
 })
 
-it('get items', () => {
-  const builder = new PathTreeBuilder()
+it('get items w/autoResolveDir = false', () => {
+  const builder = new PathTreeBuilder({ autoResolveDir: false })
   builder.addPath('/a/')
   builder.addPath('/a/index.ts')
-  expect(builder.tree).toMatchInlineSnapshot(`
-    {
-      "items": [],
-      "name": "root",
-      "path": "/",
-      "relativePath": "/",
-      "relativePathName": "",
-      "subDirectory": {
-        "a": {
-          "items": [
-            {
-              "data": undefined,
-              "ext": "ts",
-              "file": "index.ts",
-              "filename": "index",
-              "isEntry": true,
-              "parent": [Circular],
-              "path": "/a/index.ts",
-            },
-          ],
-          "name": "a",
-          "parent": [Circular],
-          "path": "/a/",
-          "relativePath": "a/",
-          "relativePathName": "a",
-          "subDirectory": {},
-        },
-      },
-    }
-  `)
-  expect(builder.getItems('/a/')).toMatchInlineSnapshot(`
-    [
-      {
-        "data": undefined,
-        "ext": "ts",
-        "file": "index.ts",
-        "filename": "index",
-        "isEntry": true,
-        "parent": {
-          "items": [Circular],
-          "name": "a",
-          "parent": {
-            "items": [],
-            "name": "root",
-            "path": "/",
-            "relativePath": "/",
-            "relativePathName": "",
-            "subDirectory": {
-              "a": [Circular],
-            },
-          },
-          "path": "/a/",
-          "relativePath": "a/",
-          "relativePathName": "a",
-          "subDirectory": {},
-        },
-        "path": "/a/index.ts",
-      },
-    ]
-  `)
+  expect(builder.tree).toMatchSnapshot()
+  expect(builder.getItems('/a/')).toMatchSnapshot()
   // get items from file, should return []
   expect(builder.getItems('/a/index.ts')).toEqual([])
   // get non-exist path, should return []
   expect(builder.getItems('/a/b/')).toEqual([])
-  // get root
-  expect(builder.getItems(ROOT_NAME)).toMatchInlineSnapshot(`[]`)
+})
+
+it('get items w/autoResolveDir = true', () => {
+  const builder = new PathTreeBuilder()
+  builder.addPath('src/index.ts')
+  builder.addPath('src/a/index.ts')
+  builder.removePath('src/index.ts')
+  builder.addPath('src/b/')
+  expect(builder.getItems('src/a/')).toMatchSnapshot()
+  expect(builder.getSubDirectories('src/')).toMatchSnapshot()
+  // get root items
+  expect(builder.getItems(ROOT_NAME)).toMatchSnapshot()
+  // get root sub directories
+  expect(builder.getSubDirectories(ROOT_NAME)).toMatchSnapshot()
+  // get sub directories but pass file path
+  expect(builder.getSubDirectories('src/index.ts')).toBeNull()
 })
 
 it('custom separator', () => {

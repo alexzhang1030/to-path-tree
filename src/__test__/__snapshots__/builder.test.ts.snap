@@ -85,6 +85,25 @@ exports[`custom separator > custom-separator remove path 1`] = `
       "relativePath": "a$",
       "relativePathName": "a",
       "subDirectory": {
+        "b": {
+          "items": [
+            {
+              "data": undefined,
+              "ext": "ts",
+              "file": "index.ts",
+              "filename": "index",
+              "isEntry": true,
+              "parent": [Circular],
+              "path": "$a$b$index.ts",
+            },
+          ],
+          "name": "b",
+          "parent": [Circular],
+          "path": "/a$b$",
+          "relativePath": "b$",
+          "relativePathName": "b",
+          "subDirectory": {},
+        },
         "z": {
           "items": [
             {
@@ -104,6 +123,237 @@ exports[`custom separator > custom-separator remove path 1`] = `
           "relativePathName": "z",
           "subDirectory": null,
         },
+      },
+    },
+  },
+}
+`;
+
+exports[`get items w/autoResolveDir = false 1`] = `
+{
+  "items": [],
+  "name": "root",
+  "path": "/",
+  "relativePath": "/",
+  "relativePathName": "",
+  "subDirectory": {
+    "a": {
+      "items": [
+        {
+          "data": undefined,
+          "ext": "ts",
+          "file": "index.ts",
+          "filename": "index",
+          "isEntry": true,
+          "parent": [Circular],
+          "path": "/a/index.ts",
+        },
+      ],
+      "name": "a",
+      "parent": [Circular],
+      "path": "/a/",
+      "relativePath": "a/",
+      "relativePathName": "a",
+      "subDirectory": {},
+    },
+  },
+}
+`;
+
+exports[`get items w/autoResolveDir = false 2`] = `
+[
+  {
+    "data": undefined,
+    "ext": "ts",
+    "file": "index.ts",
+    "filename": "index",
+    "isEntry": true,
+    "parent": {
+      "items": [Circular],
+      "name": "a",
+      "parent": {
+        "items": [],
+        "name": "root",
+        "path": "/",
+        "relativePath": "/",
+        "relativePathName": "",
+        "subDirectory": {
+          "a": [Circular],
+        },
+      },
+      "path": "/a/",
+      "relativePath": "a/",
+      "relativePathName": "a",
+      "subDirectory": {},
+    },
+    "path": "/a/index.ts",
+  },
+]
+`;
+
+exports[`get items w/autoResolveDir = true 1`] = `
+[
+  {
+    "data": undefined,
+    "ext": "ts",
+    "file": "index.ts",
+    "filename": "index",
+    "isEntry": true,
+    "parent": {
+      "items": [Circular],
+      "name": "a",
+      "parent": {
+        "items": [],
+        "name": "src",
+        "parent": {
+          "items": [],
+          "name": "root",
+          "path": "/",
+          "relativePath": "/",
+          "relativePathName": "",
+          "subDirectory": {
+            "src": [Circular],
+          },
+        },
+        "path": "/src/",
+        "relativePath": "src/",
+        "relativePathName": "src",
+        "subDirectory": {
+          "a": [Circular],
+          "b": {
+            "items": [],
+            "name": "b",
+            "parent": [Circular],
+            "path": "/src/b/",
+            "relativePath": "b/",
+            "relativePathName": "b",
+            "subDirectory": {},
+          },
+        },
+      },
+      "path": "/src/a/",
+      "relativePath": "a/",
+      "relativePathName": "a",
+      "subDirectory": null,
+    },
+    "path": "src/a/index.ts",
+  },
+]
+`;
+
+exports[`get items w/autoResolveDir = true 2`] = `
+{
+  "a": {
+    "items": [
+      {
+        "data": undefined,
+        "ext": "ts",
+        "file": "index.ts",
+        "filename": "index",
+        "isEntry": true,
+        "parent": [Circular],
+        "path": "src/a/index.ts",
+      },
+    ],
+    "name": "a",
+    "parent": {
+      "items": [],
+      "name": "src",
+      "parent": {
+        "items": [],
+        "name": "root",
+        "path": "/",
+        "relativePath": "/",
+        "relativePathName": "",
+        "subDirectory": {
+          "src": [Circular],
+        },
+      },
+      "path": "/src/",
+      "relativePath": "src/",
+      "relativePathName": "src",
+      "subDirectory": [Circular],
+    },
+    "path": "/src/a/",
+    "relativePath": "a/",
+    "relativePathName": "a",
+    "subDirectory": null,
+  },
+  "b": {
+    "items": [],
+    "name": "b",
+    "parent": {
+      "items": [],
+      "name": "src",
+      "parent": {
+        "items": [],
+        "name": "root",
+        "path": "/",
+        "relativePath": "/",
+        "relativePathName": "",
+        "subDirectory": {
+          "src": [Circular],
+        },
+      },
+      "path": "/src/",
+      "relativePath": "src/",
+      "relativePathName": "src",
+      "subDirectory": [Circular],
+    },
+    "path": "/src/b/",
+    "relativePath": "b/",
+    "relativePathName": "b",
+    "subDirectory": {},
+  },
+}
+`;
+
+exports[`get items w/autoResolveDir = true 3`] = `[]`;
+
+exports[`get items w/autoResolveDir = true 4`] = `
+{
+  "src": {
+    "items": [],
+    "name": "src",
+    "parent": {
+      "items": [],
+      "name": "root",
+      "path": "/",
+      "relativePath": "/",
+      "relativePathName": "",
+      "subDirectory": [Circular],
+    },
+    "path": "/src/",
+    "relativePath": "src/",
+    "relativePathName": "src",
+    "subDirectory": {
+      "a": {
+        "items": [
+          {
+            "data": undefined,
+            "ext": "ts",
+            "file": "index.ts",
+            "filename": "index",
+            "isEntry": true,
+            "parent": [Circular],
+            "path": "src/a/index.ts",
+          },
+        ],
+        "name": "a",
+        "parent": [Circular],
+        "path": "/src/a/",
+        "relativePath": "a/",
+        "relativePathName": "a",
+        "subDirectory": null,
+      },
+      "b": {
+        "items": [],
+        "name": "b",
+        "parent": [Circular],
+        "path": "/src/b/",
+        "relativePath": "b/",
+        "relativePathName": "b",
+        "subDirectory": {},
       },
     },
   },
