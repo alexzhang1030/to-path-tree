@@ -104,7 +104,8 @@ import { pathToTree, walkPathTree } from 'to-path-tree'
 const tree = pathToTree(input)
 walkPathTree(tree, (node) => {
   for (const item of node.items) {
-    if (item.path === 'src/a/b/d/index.ts') {
+    // NOTE: item.path is strict path, must start with sep, e.g. `/`
+    if (item.path === '/src/a/b/d/index.ts') {
       // do something...
     }
   }
