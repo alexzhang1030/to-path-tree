@@ -76,6 +76,9 @@ export interface NodeItem<T> {
 export interface TreeNode<T> {
   items: NodeItem<T>[]
   name: string
+  /**
+   * This path is strict path, must start with sep, e.g. `/`
+   */
   path: string
   /**
    * Relative to parent path

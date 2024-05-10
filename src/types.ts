@@ -23,6 +23,9 @@ export interface TreeNode<T> {
     [key: string]: TreeNode<T>
   } | null
   parent?: TreeNode<T>
+  /**
+   * This path is strict path, must start with sep, e.g. `/`
+   */
   path: string
   /**
    * Relative to parent path
