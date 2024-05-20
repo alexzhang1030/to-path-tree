@@ -36,10 +36,10 @@
     "release": "vitest run && bumpp --commit \"chore: release v%s\" --push --tag && pnpm publish"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.17.0",
+    "@antfu/eslint-config": "^2.18.1",
     "@vitest/coverage-v8": "^1.6.0",
     "bumpp": "^9.4.1",
-    "eslint": "^9.2.0",
+    "eslint": "^9.3.0",
     "lint-staged": "^15.2.2",
     "pathe": "^1.1.2",
     "simple-git-hooks": "^2.11.1",
