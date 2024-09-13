@@ -1,5 +1,5 @@
-import { ROOT_NAME } from '..'
 import { PathTreeBuilder } from '@/builder'
+import { ROOT_NAME } from '..'
 
 it('simple builder', () => {
   const builder = new PathTreeBuilder()

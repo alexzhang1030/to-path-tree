@@ -1,5 +1,5 @@
-import { DEFAULT_SEP } from './constants'
 import type { NodeItem, TreeNode } from './types'
+import { DEFAULT_SEP } from './constants'
 import { genRoot, parsePath } from './utils'
 
 export function pathToTree<Data>(paths: string[], {

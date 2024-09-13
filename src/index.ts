@@ -1,6 +1,6 @@
-export { pathToTree } from './fn'
 export { PathTreeBuilder } from './builder'
-export { ENTRY_NAME, DEFAULT_SEP, ROOT_NAME } from './constants'
-export { getFileNameAndExt, walkPathTree } from './utils'
-
+export { DEFAULT_SEP, ENTRY_NAME, ROOT_NAME } from './constants'
+export { pathToTree } from './fn'
 export type { NodeItem, ParseResults, TreeNode } from './types'
+
+export { getFileNameAndExt, walkPathTree } from './utils'

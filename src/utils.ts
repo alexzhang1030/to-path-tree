@@ -1,5 +1,5 @@
-import { DEFAULT_SEP, ENTRY_NAME, ROOT_NAME } from './constants'
 import type { NodeItem, ParseResults, TreeNode } from './types'
+import { DEFAULT_SEP, ENTRY_NAME, ROOT_NAME } from './constants'
 
 const REGEX_HAVE_PATHS = /.+\/(.+)\.(.+)$/
 const REGEX_NO_PATHS = /(.+)\.(.+)$/
