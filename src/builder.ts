@@ -1,5 +1,5 @@
-import { DEFAULT_SEP, ROOT_NAME } from './constants'
 import type { NodeItem, ParseResults, TreeNode } from './types'
+import { DEFAULT_SEP, ROOT_NAME } from './constants'
 import { genRoot, parsePath } from './utils'
 
 export class PathTreeBuilder<T extends Record<string, unknown>> {
