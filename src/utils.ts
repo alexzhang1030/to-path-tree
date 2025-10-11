@@ -5,16 +5,24 @@ const REGEX_HAVE_PATHS = /.+\/(.+)\.(.+)$/
 const REGEX_NO_PATHS = /(.+)\.(.+)$/
 
 export function getFileNameAndExt(path: string, sep = DEFAULT_SEP) {
-  return path.includes(sep)
+  const result = path.includes(sep)
     ? REGEX_HAVE_PATHS.exec(path)?.slice(1)
     : REGEX_NO_PATHS.exec(path)?.slice(1)
+
+  // Handle files without extensions (like .gitignore, .env, etc.)
+  if (!result) {
+    const filename = path.includes(sep) ? path.split(sep).pop()! : path
+    return [filename, '']
+  }
+
+  return result
 }
 
 export function cleanPath(path: string, sep: string) {
   if (path.startsWith(sep))
-    path.slice(1)
+    path = path.slice(1)
   if (path.endsWith(sep))
-    path.slice(0, -1)
+    path = path.slice(0, -1)
   return path
 }
 
@@ -24,8 +32,8 @@ export function parsePath<Data>(
   currentNode: TreeNode<Data>,
   getData?: (node: NodeItem<Data>) => Data,
 ): ParseResults<Data> {
+  const isDirectory = originalPath.endsWith(sep)
   const path = cleanPath(originalPath, sep)
-  const isDirectory = path.endsWith(sep)
   const parts = path.split(sep)
   const partsLen = parts.length
 
@@ -56,7 +64,7 @@ export function parsePath<Data>(
         currentNode.subDirectory[fixedPart] = {
           name: fixedPart,
           items: [],
-          subDirectory: null,
+          subDirectory: {},
           parent: currentNode,
           path: `${currentNode.path}${fixedPart}${sep}`,
           relativePath: `${fixedPart}${sep}`,

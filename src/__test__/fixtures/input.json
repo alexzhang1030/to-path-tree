@@ -8,5 +8,6 @@
   "src/b/c/index.ts",
   "a/index.ts",
   "a/b.ts",
-  "a/b/index.js"
+  "a/b/index.js",
+  ".gitignore"
 ]
