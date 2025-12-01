@@ -2,7 +2,7 @@
   "name": "to-path-tree",
   "type": "module",
   "version": "1.2.4",
-  "packageManager": "pnpm@10.23.0",
+  "packageManager": "pnpm@10.24.0",
   "description": "Convert a file path array to a tree.",
   "author": "alexzhang1030",
   "license": "MIT",
@@ -38,8 +38,8 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^6.2.0",
-    "@vitest/coverage-v8": "^4.0.13",
-    "bumpp": "^10.3.1",
+    "@vitest/coverage-v8": "^4.0.14",
+    "bumpp": "^10.3.2",
     "eslint": "^9.39.1",
     "lint-staged": "^16.2.7",
     "pathe": "^2.0.3",
@@ -47,7 +47,7 @@
     "tsup": "^8.5.1",
     "typescript": "^5.9.3",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^4.0.13"
+    "vitest": "^4.0.14"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm exec lint-staged"
