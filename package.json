@@ -37,8 +37,8 @@
     "release": "vitest run && bumpp --commit \"chore: release v%s\" --push --tag && pnpm publish"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^6.2.0",
-    "@vitest/coverage-v8": "^4.0.14",
+    "@antfu/eslint-config": "^6.4.2",
+    "@vitest/coverage-v8": "^4.0.15",
     "bumpp": "^10.3.2",
     "eslint": "^9.39.1",
     "lint-staged": "^16.2.7",
@@ -47,7 +47,7 @@
     "tsup": "^8.5.1",
     "typescript": "^5.9.3",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^4.0.14"
+    "vitest": "^4.0.15"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm exec lint-staged"
