@@ -38,8 +38,8 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^6.7.3",
-    "@vitest/coverage-v8": "^4.0.16",
-    "bumpp": "^10.3.2",
+    "@vitest/coverage-v8": "^4.0.17",
+    "bumpp": "^10.4.0",
     "eslint": "^9.39.2",
     "lint-staged": "^16.2.7",
     "pathe": "^2.0.3",
@@ -47,7 +47,7 @@
     "tsup": "^8.5.1",
     "typescript": "^5.9.3",
     "vite-tsconfig-paths": "^6.0.4",
-    "vitest": "^4.0.16"
+    "vitest": "^4.0.17"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm exec lint-staged"
