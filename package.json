@@ -37,7 +37,7 @@
     "release": "vitest run && bumpp --commit \"chore: release v%s\" --push --tag && pnpm publish"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^7.4.3",
+    "@antfu/eslint-config": "^8.2.0",
     "@vitest/coverage-v8": "^4.0.18",
     "bumpp": "^11.0.0",
     "eslint": "^10.0.1",
