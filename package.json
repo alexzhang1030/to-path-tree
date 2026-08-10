@@ -1,7 +1,7 @@
 {
   "name": "to-path-tree",
   "type": "module",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "packageManager": "pnpm@11.21.0",
   "description": "Convert a file path array to a tree.",
   "author": "alexzhang1030",
