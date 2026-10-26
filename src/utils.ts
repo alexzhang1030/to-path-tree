@@ -11,7 +11,9 @@ export function getFileNameAndExt(path: string, sep = DEFAULT_SEP) {
 
   // Handle files without extensions (like .gitignore, .env, etc.)
   if (!result) {
-    const filename = path.includes(sep) ? path.split(sep).pop()! : path
+    const filename = path.includes(sep)
+      ? path.split(sep).pop()!
+      : path
     return [filename, '']
   }
 
@@ -57,7 +59,9 @@ export function parsePath<Data>(
     else { // this part is a directory
       if (!currentNode.subDirectory)
         currentNode.subDirectory = {}
-      const fixedPart = part === '' ? sep : part
+      const fixedPart = part === ''
+        ? sep
+        : part
       if (fixedPart === sep)
         continue
       if (!currentNode.subDirectory[fixedPart]) {

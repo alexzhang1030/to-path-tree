@@ -109,5 +109,7 @@ export class PathTreeBuilder<T extends Record<string, unknown>> {
 }
 
 function getStrictPath(path: string) {
-  return path.startsWith('/') ? path : `/${path}`
+  return path.startsWith('/')
+    ? path
+    : `/${path}`
 }

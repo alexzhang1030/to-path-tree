@@ -6,5 +6,7 @@ export default defineConfig({
     includeSource: ['src/*'],
     globals: true,
   },
-  plugins: [paths()],
+  plugins: [
+    paths(),
+  ],
 })
